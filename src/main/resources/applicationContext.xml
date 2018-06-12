@@ -16,8 +16,10 @@
             http://www.springframework.org/schema/mvc
             http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
+    <context:component-scan base-package="com.xuanzilan.springMVC"/>
+
     <!--利用springmvc的defaultServletHandler配置访问静态资源-->
-    <mvc:default-servlet-handler/>
+    <!--<mvc:default-servlet-handler/>-->
 
     <!--注册视图解析器，主要用于拼接view地址的,物理字符解析器，其实是纯粹的物理拼接-->
    <!-- <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -28,13 +30,13 @@
     </bean>-->
 
     <!--使用SimpleURLHandlerMapping配置路径，如果不设置，是使用默认的handlerMapping-->
-    <bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
-        <!--以下mappings和urlmap两种方式都可以进行路径配置-->
-        <!--<property name="mappings">
+    <!--<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        &lt;!&ndash;以下mappings和urlmap两种方式都可以进行路径配置&ndash;&gt;
+        &lt;!&ndash;<property name="mappings">
             <props>
                 <prop key="/my.do">myController</prop>
             </props>
-        </property>-->
+        </property>&ndash;&gt;
         
         <property name="urlMap">
             <map>
@@ -43,8 +45,8 @@
                 <entry key="ded" value="myController"></entry>
             </map>
         </property>
-    </bean>
+    </bean>-->
 
-    <bean id="myController" class="com.xuanzilan.springMVC.controller.MyController"></bean>
+    <!--<bean id="myController" class="com.xuanzilan.springMVC.controller.MyController"></bean>-->
 
 </beans>
